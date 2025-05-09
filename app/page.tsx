@@ -1,201 +1,173 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone, Truck, Package, Globe, Shield, CheckCircle } from "lucide-react";
+import {
+  Truck,
+  FileText,
+  Plane,
+  Ship,
+  Building2,
+  Package,
+  ArrowRight,
+  Phone,
+  CheckCircle,
+  Quote,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import ServiceCard from "@/components/home/service-card";
 import TestimonialCard from "@/components/home/testimonial-card";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <main className="flex-1">
       {/* Hero Section */}
-      <section className="relative h-[70vh] md:h-[80vh] bg-slate-800 text-white">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-800/70">
-          <Image 
-            src="https://images.pexels.com/photos/1554646/pexels-photo-1554646.jpeg" 
-            alt="Logistics in Kenya"
-            fill 
-            priority
-            className="object-cover mix-blend-overlay"
-          />
-        </div>
-        <div className="container mx-auto px-4 h-full flex items-center relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fadeIn">
-              Your Trusted Partner for Logistics in Kenya
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-200">
-              Comprehensive logistics solutions to streamline your supply chain 
-              and ensure smooth operations across East Africa.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-[#FFA500] hover:bg-[#E59400] text-black font-semibold text-base px-6 py-6">
-                Get a Quote
-              </Button>
-              <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/10 flex items-center gap-2 text-base px-6 py-6">
-                <Phone className="h-5 w-5" />
-                <span>Call Now</span>
-              </Button>
-            </div>
+      <section className="relative h-[90vh] flex items-center justify-center bg-slate-900 text-white">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            KENYA TRADEX: YOUR TRUSTED PARTNER FOR LOGISTICS IN KENYA
+          </h1>
+          <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+            Welcome to Kenya Tradex, your gateway to seamless logistics
+            solutions in East Africa. As a leading customs clearance and
+            logistics company in Kenya, we provide comprehensive services to
+            streamline your trade operations efficiently.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              className="bg-orange-500 hover:bg-orange-600"
+            >
+              <Link href="/contact">Get A Quote</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="text-white border-white hover:bg-white/10"
+            >
+              <Link href="/about">Learn More</Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16 md:py-24 bg-white dark:bg-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We offer a comprehensive range of logistics services to meet all your 
-              transportation and freight needs in Kenya and beyond.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <ServiceCard 
+      {/* Services Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            WHAT WE OFFER
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ServiceCard
               icon={<Truck className="h-10 w-10" />}
               title="Clearing & Forwarding"
-              description="Expert handling of all customs documentation and procedures for smooth import and export operations."
+              description="Our good relationship with leading shipping lines have enabled us come up with a facility and makes clearing and transportation of cargo as easy as abc"
               href="/services#clearing"
             />
-            <ServiceCard 
-              icon={<Shield className="h-10 w-10" />}
+            <ServiceCard
+              icon={<FileText className="h-10 w-10" />}
               title="Customs Consultancy"
-              description="Professional advice on customs regulations, tariff classifications, and compliance requirements."
+              description="Struggling with the East African Community Customs Law? Do you have issues with the KRA and don't know where to begin?"
               href="/services#consultancy"
             />
-            <ServiceCard 
-              icon={<Globe className="h-10 w-10" />}
+            <ServiceCard
+              icon={<Plane className="h-10 w-10" />}
               title="Air Freight"
-              description="Fast and reliable air freight services for time-sensitive shipments worldwide."
+              description="We pride in uplifting our clients freight within 24 hrs to a maximum 48 hours after packing, subject to availability of all necessary documentation"
               href="/services#air-freight"
             />
-            <ServiceCard 
-              icon={<Package className="h-10 w-10" />}
+            <ServiceCard
+              icon={<Ship className="h-10 w-10" />}
               title="Sea Freight"
-              description="Cost-effective sea freight solutions for bulk cargo and containerized shipments."
+              description="We pride in uplifting our clients freight within 24 hrs to a maximum 48 hours after packing, subject to availability of all necessary documentation"
               href="/services#sea-freight"
             />
-            <ServiceCard 
+            <ServiceCard
               icon={<Truck className="h-10 w-10" />}
               title="Transportation"
-              description="Comprehensive road transportation services with a modern and well-maintained fleet."
+              description="We pride in our team of highly qualified driver and a fleet of over 15 trucks that meets high international safety standards. All our truck have GPRS tracking systems"
               href="/services#transportation"
             />
-            <ServiceCard 
-              icon={<Package className="h-10 w-10" />}
+            <ServiceCard
+              icon={<Building2 className="h-10 w-10" />}
               title="Warehousing"
-              description="Secure storage facilities with inventory management and distribution services."
+              description="We have partnered with experts of warehousing in Mombasa to provide our clients who for some reason are not ready for cargo to be delivered with the best warehousing facility"
               href="/services#warehousing"
             />
           </div>
         </div>
       </section>
 
-      {/* About Snippet */}
-      <section className="py-16 md:py-24 bg-gray-50 dark:bg-slate-800/50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image 
-                src="https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg" 
-                alt="About Kenya Tradex" 
-                fill
-                className="object-cover"
-              />
-            </div>
+      {/* About Preview Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4">About Kenya Tradex</h2>
-              <p className="text-lg mb-6 text-muted-foreground">
-                Kenya Tradex is a leading logistics provider with over 15 years of experience 
-                in the East African region. We pride ourselves on delivering reliable, 
-                efficient, and cost-effective logistics solutions to businesses of all sizes.
+              <h2 className="text-3xl font-bold mb-6">WHO WE ARE</h2>
+              <p className="text-lg mb-6">
+                Kenya Tradex is a leading logistics provider in Kenya, offering
+                a comprehensive range of services to streamline your
+                international trade operations. We are duly registered with the
+                Registrar of Companies under the Kenyan Companies Act Cap 486.
               </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-[#FFA500]" />
-                  <span>Experienced team of logistics professionals</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-[#FFA500]" />
-                  <span>Strategic locations throughout East Africa</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-[#FFA500]" />
-                  <span>Modern fleet and equipment</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-[#FFA500]" />
-                  <span>Committed to customer satisfaction</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="flex items-center gap-2">
-                <span>Read More</span>
-                <ArrowRight className="h-4 w-4" />
+              <Button asChild size="lg">
+                <Link href="/about">Learn More About Us</Link>
               </Button>
+            </div>
+            <div className="bg-slate-200 h-[400px]">
+              {/* Image placeholder */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Preview */}
-      <section className="py-16 md:py-24 bg-white dark:bg-slate-900">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it - hear from some of our satisfied clients
-              about their experience working with Kenya Tradex.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <TestimonialCard 
-              quote="Kenya Tradex has been instrumental in streamlining our supply chain operations. Their team is responsive, professional, and always delivers on time."
-              author="John Mwangi"
-              company="Nairobi Manufacturing Ltd"
+      <section className="py-20 bg-white">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            What People Say About Us
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <TestimonialCard
+              name="ROBANNE TRADERS"
+              company="Electronics Shop"
+              location="Kampala, Uganda"
+              testimonial="Thank you for handling our containers since 2014 with no major issues at all. Happy to work you."
+              contact="Tel: +256 / +254 20 2301015"
             />
-            <TestimonialCard 
-              quote="We've been working with Kenya Tradex for over 5 years now, and their services have been consistently excellent. I highly recommend them for any logistics needs."
-              author="Sarah Ochieng"
-              company="East African Imports"
+            <TestimonialCard
+              name="MWALO PAPER DISTRIBUTORS"
+              location="Kampala, Uganda"
+              testimonial="Honest, Efficient and Customer friendly Company. They will always deliver. Recommended."
+              contact="Tel +256 414 250981, Mob: +254 722988388"
             />
-            <TestimonialCard 
-              quote="The customs consultancy services provided by Kenya Tradex helped us navigate complex regulations and save significantly on import duties."
-              author="Robert Kimani"
-              company="Summit Electronics"
+            <TestimonialCard
+              name="BHAVIN MOTORS"
+              location="Mombasa, Kenya"
+              testimonial="A very professional Company that takes good care of her customers. Happy to clear our cars with you."
+              contact="Tel: +254 724 750 590"
             />
-          </div>
-          
-          <div className="text-center mt-10">
-            <Button variant="outline" className="flex items-center gap-2 mx-auto">
-              <span>View All Testimonials</span>
-              <ArrowRight className="h-4 w-4" />
-            </Button>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#032D60] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to streamline your logistics?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto text-gray-300">
-            Contact us today for a free consultation and quote. Our team is ready to help you
-            optimize your supply chain and reduce logistics costs.
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Let's Partner Together</h2>
+          <p className="text-lg mb-8">
+            Contact us today to discuss your logistics needs and discover how
+            Kenya Tradex can help your business thrive.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button className="bg-[#FFA500] hover:bg-[#E59400] text-black font-semibold">
-              Get a Quote
-            </Button>
-            <Button variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
-              Contact Us
-            </Button>
-          </div>
+          <Button
+            asChild
+            size="lg"
+            className="bg-orange-500 hover:bg-orange-600"
+          >
+            <Link href="/contact">Get A Quote</Link>
+          </Button>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

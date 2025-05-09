@@ -1,24 +1,35 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { QuoteIcon } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Quote } from "lucide-react";
 
 interface TestimonialCardProps {
-  quote: string;
-  author: string;
-  company: string;
-  image?: string;
+  name: string;
+  company?: string;
+  location: string;
+  testimonial: string;
+  contact: string;
 }
 
-export default function TestimonialCard({ quote, author, company, image }: TestimonialCardProps) {
+export default function TestimonialCard({
+  name,
+  company,
+  location,
+  testimonial,
+  contact,
+}: TestimonialCardProps) {
   return (
-    <Card className="h-full flex flex-col">
-      <CardContent className="pt-6 flex-1">
-        <QuoteIcon className="h-8 w-8 text-[#FFA500] mb-4" />
-        <p className="text-muted-foreground mb-4">{quote}</p>
+    <Card className="bg-slate-50">
+      <CardHeader className="text-center">
+        <Quote className="w-8 h-8 mx-auto text-orange-500 mb-4" />
+      </CardHeader>
+      <CardContent className="text-center">
+        <p className="text-gray-600 mb-6 italic">{testimonial}</p>
+        <div className="space-y-2">
+          <h4 className="font-bold">{name}</h4>
+          {company && <p className="text-sm text-gray-500">{company}</p>}
+          <p className="text-sm text-gray-500">{location}</p>
+          <p className="text-sm text-gray-500">{contact}</p>
+        </div>
       </CardContent>
-      <CardFooter className="flex flex-col items-start border-t pt-4">
-        <p className="font-bold">{author}</p>
-        <p className="text-sm text-muted-foreground">{company}</p>
-      </CardFooter>
     </Card>
   );
 }
